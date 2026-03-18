@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+  height: 100%;
+  color: #777;
+  line-height: 1.8;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+  background-image: url("images/sunails.png");
+  min-height: 100%;
+}
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+  background-image: url("/w3images/parallax2.jpg");
+  min-height: 400px;
+}
+
+/* Third image (Contact) */
+.bgimg-3 {
+  background-image: url("/w3images/parallax3.jpg");
+  min-height: 400px;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1600px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+    min-height: 400px;
+  }
+}
+</style>
+    </head>
+    <body>
+
+<h1>Table of Contents</h1>
+<ul>
+  <li>2FA defined</li>
+  <li>Benefits of 2FA</li>
+  <li>Some other advantages of 2FA include</li>
+  <li>Authentication methods for 2FA</li>
+  <li>2FA implementation</li>
+  <li>2FA vs. MFA</li>
+  <li>SOURCE</li>
+  <li>2FA: A simplified guide to two-factor authentication</li>
+  <li>What is 2FA?</li>
+  <li>2FA vs. multi-factor authentication (MFA)</li>
+  <li>How does 2FA work?</li>
+  <li>Why is two-factor authentication important?</li>
+  <li>Types of 2FA security</li>
+  <li>How to get 2FA on your accounts</li>
+  <li>3 benefits of 2FA</li>
+  <li>Safeguard your information and identity</li>
+  <li>FAQs about 2FA</li>
+  <li>What is two-factor authentication?</li>
+  <li>Two-Factor Authentication</li>
+  <li>What is an authentication factor?</li>
+  <li>How does two-factor authentication work?</li>
+  <li>Why use two-factor authentication?</li>
+  <li>Is SMS-based two-factor authentication secure?</li>
+  <li>Are there drawbacks to two-factor authentication?</li>
+  <li>Two-factor authentication (TechTarget)</li>
+  <li>What are authentication factors?</li>
+  <li>How does two-factor authentication work?</li>
+  <li>Elements of two-factor authentication</li>
+  <li>Types of two-factor authentication products</li>
+  <li>How 2FA hardware tokens work</li>
+  <li>Two-factor authentication for mobile devices</li>
+  <li>Authentication standards</li>
+  <li>Push notifications for 2FA</li>
+  <li>Is two-factor authentication secure?</li>
+  <li>Future of authentication</li>
+</ul>
+
+<hr>
+
+<h2>2FA Defined</h2>
+<p>Two-factor authentication (2FA) is an identity and access management security method that requires two forms of identification to access resources and data. 2FA gives businesses the ability to monitor and help safeguard their most vulnerable information and networks.</p>
+
+<h2>Benefits of 2FA</h2>
+<p>Businesses use 2FA to help protect their employees' personal and business assets. This is important because it prevents cybercriminals from stealing, destroying, or accessing your internal data records for their own use.</p>
+<p>The advantages of 2FA are endless. For example, with 2FA, there's no need for users to carry or download a token generator, or an app associated with one. Most websites use your mobile device to text, call, or use a personalized 2FA for their business to verify your identity.</p>
+
+<h3>Some Other Advantages of 2FA Include:</h3>
+<ul>
+  <li>There's no need to use a hardware token generator. These types of 2FA methods are often lost or misplaced. However, with advanced technology, 2FA methods are more convenient than ever.</li>
+  <li>Passcode generators are more efficient than traditional passwords. Generators are the safer option because no two passcodes are the same.</li>
+  <li>Max passcode entry prevents cybercriminals from hacking and accessing sensitive data.</li>
+  <li>The process is manageable and user-friendly.</li>
+</ul>
+
+<h2>Authentication Methods for 2FA</h2>
+<p>There are different authentication methods when using two-factor authentication. Here's a list of some of the most popular options.</p>
+<ul>
+  <li><strong>Hardware tokens</strong> — Businesses can give their employees hardware tokens in the form of a key fob that produces codes every few seconds to a minute. This is one of the oldest forms of two-factor authentication.</li>
+  <li><strong>Push notifications</strong> — Push two-factor authentication methods require no password. This type of 2FA sends a signal to your phone to either approve/deny or accept/decline access to a website or app to verify your identity.</li>
+  <li><strong>SMS verification</strong> — SMS, or text messaging, can be used as a form of two-factor authentication when a message is sent to a trusted phone number. The user is prompted to either interact with the text or use a one-time code to verify their identity on a site or app.</li>
+  <li><strong>Voice-based authentication</strong> — Voice authentication works in a similar way to push notifications, except that your identity is confirmed through automation. The voice will ask you to press a key or state your name to identify yourself.</li>
+</ul>
+
+<h2>2FA Implementation</h2>
+<p>Implementing 2FA within a business or personal setting is beneficial in protecting vulnerable networks and databases.</p>
+<p>With a mobile device, you can generate your own codes, or tokens, to provide a unique set of letters/numbers to verify your identity. These codes are sent via SMS and are verified through a website or app. It is important to note that the website or app that you're identifying yourself through is reliable and safe.</p>
+<p>One-time passcodes that are generated through apps or websites are more time-sensitive than an SMS code or token.</p>
+<p>Here are some tips to ensure your two-factor authentication implementation goes as smoothly as possible.</p>
+<ul>
+  <li>Consider using the most common method of implementation, SMS authentication. It's convenient and ensures that all user identities are verified via a reliable phone number.</li>
+  <li>Remember that most users can implement 2FA through the security settings of their smartphone or electronic device.</li>
+  <li>Find the right two-factor authentication provider. Each company that hosts authentication services has their own process of implementation. For example, the Authenticator app allows you to register one or more of your business/personal devices to ensure that all are protected.</li>
+</ul>
+<p>Businesses and individuals can implement these two forms of 2FA through Microsoft's Authenticator app. This service provides authenticator options, both two-factor and multi-factor, depending on your unique individual or business needs.</p>
+
+<h2>2FA vs. MFA</h2>
+<p>The difference between two-factor authentication, 2FA, and multi-factor authentication, MFA, is that 2FA involves two sets of steps to identify a user. In addition, 2FA utilizes one-time passcodes that are time-sensitive to prevent identity theft. On the other hand, MFA involves two or more steps or processes to identify a user.</p>
+<p>Usually, businesses with high-level security (i.e., healthcare facilities, government agencies, or financial services) opt for multi-factor authentication versus two-factor authentication. Two-factor authentication helps add a layer of security to all your online personal and business accounts.</p>
+
+<p><strong>Source:</strong> <a href="https://www.microsoft.com/en-us/security/business/security-101/what-is-two-factor-authentication-2fa">https://www.microsoft.com/en-us/security/business/security-101/what-is-two-factor-authentication-2fa</a></p>
+
+<hr>
+
+<h1>2FA: A Simplified Guide to Two-Factor Authentication</h1>
+<p>Enable two-factor authentication (2FA) for an added level of security against hackers and identity thieves. Learn what 2FA is and how it helps secure your data. Then get Norton™ 360 with LifeLock™ Select to help secure your personal information and protect against identity theft.</p>
+<p>It's no secret that cybercriminals are hungry for passwords and other user data.</p>
+<p>An unprotected password can help cybercriminals access your bank account, credit cards, or personal websites. From there, they can:</p>
+<ol>
+  <li>Sell your personal information.</li>
+  <li>Access your money.</li>
+  <li>Compromise your overall digital security.</li>
+</ol>
+<p>But the battle isn't lost. One way to quickly boost the safety of your online accounts is to enable two-factor authentication. From safeguarding mobile banking details to shielding your medical history, 2FA verification should be a pillar of your internet safety practices.</p>
+
+<h2>What is 2FA?</h2>
+<p>2FA, or two factor authentication, is when a site or app requires you to enter an extra form of identification to verify your identity and log into your account. 2FA requires people to verify their identity based on two of the three factors that can confirm identity:</p>
+<ol>
+  <li>Something you know (e.g., a password)</li>
+  <li>Something you have (e.g., a phone)</li>
+  <li>Something you are (e.g., a fingerprint or facial scan)</li>
+</ol>
+<p>That extra ID can be a code generated and sent directly through a text message or authenticator app. It can also be in the form of a piece of hardware like a USB drive or a biometric ID like a fingerprint.</p>
+<p>Let's break this down even further, including how two-factor authentication works, types of two-factor authentication, and why two-factor authentication is so important.</p>
+
+<h2>2FA vs. Multi-Factor Authentication (MFA)</h2>
+<p>MFA refers to any type of authentication that requires two or more factors. That means that while 2FA is a form of MFA, not all forms of MFA have only two factors. Increasing the level of security by adding an extra factor makes it much more difficult for hackers to gain entry into a system.</p>
+
+<h2>How Does 2FA Work?</h2>
+<p>As the name suggests, two-factor authentication requires one extra step—a second factor—to log into an account. The process works as follows:</p>
+<ol>
+  <li>The user enters their username and password.</li>
+  <li>The account, platform, or site prompts users to input another verification form, such as a one-time password or code sent to their mobile phone.</li>
+  <li>The user enters the verification code to access their account.</li>
+</ol>
+<p>An ATM card is a good example of two-factor authentication in the real world. In addition to physically presenting the card (something you have), you must also type in your PIN (something you know) to verify your identity and access your account.</p>
+
+<h2>Why is Two-Factor Authentication Important?</h2>
+<p>Two-factor authentication is important because adding an extra layer of verification before you can access your account means thieves will struggle to get your personal information. As cybercriminals continue to use brute force or password spraying attacks, even if you're following good password security practices you need 2FA as well. It might seem like a hassle to add an extra step to your web surfing. But without it, you could be leaving yourself vulnerable to:</p>
+<ol>
+  <li>Cybercriminals who want to steal your personal information</li>
+  <li>Hackers trying to access your bank accounts</li>
+  <li>Thieves breaking into your online credit card portals</li>
+</ol>
+<p>If you add a knowledge factor to your bank account, a cybercriminal who knows your password due to a data breach or phishing operation won't be able to access the account. This is because your phone will receive the verification code.</p>
+<p>That way, those still relying on simple passwords have a better shot at keeping their bank accounts secure.</p>
+
+<h2>Types of 2FA Security</h2>
+<p>There are several types of two-factor authentication security, including:</p>
+<ol>
+  <li><strong>Something you know:</strong> These kinds of 2FA use a code, question, or password that are unique to you. Using your PIN at an ATM is a form of 2FA that requires something you know.</li>
+  <li><strong>Something you have:</strong> This type of 2FA requires users to possess a type of physical token or device, such as a phone or USB token, that they need to use to log in. When you need to enter a code you receive via email or text before you can log in, or when you use an Authenticator app, you're using this method of 2FA.</li>
+  <li><strong>Something you are:</strong> This type of 2FA requires biometrics like fingerprint or facial recognition or a physical location (confirmed by GPS) to confirm your identity.</li>
+</ol>
+
+<h2>How to Get 2FA on Your Accounts</h2>
+<p>Though not all sites use 2FA, some give you the option to activate it for your account. For sites that allow you to enable 2FA, you can turn it on in your account security or privacy settings.</p>
+<p>Some popular websites that do enable 2FA include:</p>
+<ol>
+  <li>Amazon</li>
+  <li>Facebook and Instagram</li>
+  <li>Dropbox</li>
+  <li>LastPass</li>
+  <li>LinkedIn</li>
+  <li>Intuit</li>
+  <li>TurboTax</li>
+  <li>Mint</li>
+  <li>PayPal</li>
+  <li>Yahoo</li>
+</ol>
+<p>If a site or platform you use doesn't offer 2FA yet, consider using a secure password manager to help you store and create stronger passwords.</p>
+<p>Adding two-factor authentication to your high-priority accounts can help keep you, your money, and your personal information more secure.</p>
+<p><strong>Tip:</strong> If you're using your phone as your 2FA method, make sure it's also password-protected. Otherwise, if your phone is lost or stolen, scammers could access your accounts.</p>
+
+<h2>3 Benefits of 2FA</h2>
+<p>The added security and protection that two-factor authentication gives you is a net positive. But there are a few extra benefits that you might not know about, including:</p>
+<ol>
+  <li><strong>Account monitoring:</strong> You'll know if someone is trying to access your accounts because you'll receive a message or prompt on your device. That allows you to report it and further strengthen your security by changing your password to something stronger.</li>
+  <li><strong>Dynamic process:</strong> 2FA authenticator apps, push notifications, and texts are generated and sent when you log in, meaning you don't have to worry about securely storing another factor.</li>
+  <li><strong>Account recovery assistance:</strong> 2FA means that you don't have to put in a help desk ticket or try to get on the phone with a support team member to reset your logins or secure your account.</li>
+</ol>
+
+<h2>Safeguard Your Information and Identity</h2>
+<p>Now that you know how 2FA can improve the Cyber Safety of your online accounts and your personal data, enable it wherever you can. Then, install a comprehensive security software and identity theft protection tool like Norton 360 with LifeLock Select, which helps protect against malware, encrypt your connection with a VPN, and safeguard your identity against scammers. Plus, our restoration specialists will help you restore your identity should the unthinkable happen.</p>
+
+<h2>FAQs About 2FA</h2>
+<p>Check out some frequently asked questions concerning the 2FA login process.</p>
+
+<h3>Is 2FA safe?</h3>
+<p>For the most part, 2FA is safe. Still, like most online activities, there are ways that criminals can bypass 2FA security and access your account. For example, lost password recovery usually resets your password via email, and it can bypass 2FA. Even though it's not 100% secure, 2FA can bolster your online security and is recommended.</p>
+
+<h3>Can two-step verification be hacked?</h3>
+<p>Yes, hackers can use certain phishing messages to work around 2FA login processes. That being said, having a second authentication factor makes it more difficult for hackers because more information is required to gain access.</p>
+
+<h3>What is the strongest 2FA method?</h3>
+<p>Hardware-based 2FA is the strongest form of 2FA verification. Because a physical item is needed, whether it's a phone, a thumb drive, an ID card, or another object, it's much more difficult for a hacker or criminal to access all parts of 2FA logins.</p>
+
+<h3>Is MFA better than 2FA?</h3>
+<p>Multi-factor authentication that uses three or more authentication factors is more secure than 2FA. For most sites, apps, and platforms, 2FA should be secure enough. Groups that have higher security needs (governments, healthcare providers, and financial institutions, for example) may require additional verification factors.</p>
+
+<h3>How do I know if I have two-factor authentication?</h3>
+<p>You can check if your account or device has 2FA by entering your account security or privacy settings. You should see options for the different types of 2FA security offered.</p>
+
+<p><strong>Source:</strong> <a href="https://us.norton.com/blog/privacy/what-is-2fa">https://us.norton.com/blog/privacy/what-is-2fa</a></p>
+
+<hr>
+
+<h1>What is Two-Factor Authentication?</h1>
+<p>Two-factor authentication, abbreviated as 2FA, is an authentication process that requires two different authentication factors to establish identity. In a nutshell, it means requiring a user to prove their identity in two different ways before granting them access. 2FA is one form of multi-factor authentication.</p>
+
+<h2>Two-Factor Authentication</h2>
+
+<h3>What is authentication?</h3>
+<p>Authentication is an important component of access control. It is the security practice of confirming that someone is who they claim to be. A traveler showing their passport to a customs agent is one example.</p>
+<p>In the scope of cybersecurity, the most common example of authentication is logging into a service on the web, such as signing into Gmail in a web browser or logging in on the Facebook app. When a user provides a username and password combination, the service can confirm these details and use them to authenticate the user.</p>
+
+<h3>What is an Authentication Factor?</h3>
+<p>Authentication factors are different classes of identity verification methods. Some commonly used authentication factors for 2FA include:</p>
+<ol>
+  <li><strong>Knowledge:</strong> This is a piece of information that only the user should know, such as a password or the answer to a security question.</li>
+  <li><strong>Possession:</strong> This factor relies on the user maintaining physical possession of an object. For example, a hardware key that can generate passcodes, or a mobile device that can be sent codes.</li>
+  <li><strong>Biometric Data:</strong> These are unique biological traits of the user that can be used in authentication. Examples include fingerprints, retinal scans, and face ID.</li>
+  <li><strong>Location:</strong> Location-based tools like GPS can be used to restrict authentication to users within a specified geographic region.</li>
+</ol>
+<p>It should be noted that requiring two instances of the same authentication factor does not qualify as 2FA. For example, requiring a password as well as a security question is still single-factor authentication. Both of these pertain to the factor of knowledge.</p>
+
+<h3>How Does Two-Factor Authentication Work?</h3>
+<p>Two-factor authentication can work in multiple ways. One of the most common examples of 2FA requires a username/password verification and an SMS text verification.</p>
+<p>In this example, when the user creates an account for a service they must provide a unique username, a password, and their mobile phone number. When the user logs into that service, they provide their username and password. This provides the first authentication factor (knowledge; the user has proven that they know their unique login credentials).</p>
+<p>Next, the service will send the user an automated text message with a numerical code. The user will then get prompted to enter the numerical code. Assuming the code is correct, the user has provided a second authentication factor (possession; the user is in possession of their mobile device). Now the conditions for 2FA have been met and the user can be authenticated and granted access to their account.</p>
+
+<h3>Why Use Two-Factor Authentication?</h3>
+<p>Password-based security has become too easy to exploit by attackers. With the prevalence of phishing scams, on-path attacks, brute force attacks, and password re-use, it has become increasingly simple for attackers to collect stolen login credentials. These stolen credentials can be traded or sold for use in credential stuffing attacks. For this reason, 2FA is becoming more and more commonplace.</p>
+<p>Stronger identity verification has also increased in importance as remote workforces become more common. Since employees' physical presence in the office cannot be used to verify their identity, measures like 2FA help ensure that their accounts have not been compromised.</p>
+<p>Security experts generally recommend that users enable 2FA whenever possible, as well as requesting it from services that handle sensitive user data but don't currently offer 2FA. While 2FA is not impossible for attackers to crack, it is significantly more difficult and expensive to compromise than password-only authentication.</p>
+
+<h3>Is SMS-Based Two-Factor Authentication Secure?</h3>
+<p>SMS-based 2FA (text-message verification) is much more secure than single-factor authentication (password-only). That being said, SMS is among the least secure 2FA methods. The SMS protocol is not very secure and SMS messages can be intercepted by attackers.</p>
+<p>There are other ways to implement 2FA using a mobile device that are more secure: for example, sending the verification code through a secure app that uses strong encryption. Google and many other major Internet services use time-based one-time passwords (TOTP). With TOTP, a client (often an app running on a smartphone) creates a temporary single-use code based on the time of day. These codes have an extremely short lifespan, typically less than a minute. This tight timeline makes it extremely challenging for an attacker to intercept and decrypt the code before it expires.</p>
+<p>There is also an emerging 2FA technology called 'Sound-Proof,' which uses ambient noise picked up by the microphones built into mobile devices and laptops. Sound-Proof works by comparing the samples of ambient noise to ensure that both devices are in the same room.</p>
+
+<h3>Are There Drawbacks to Two-Factor Authentication?</h3>
+<p>While 2FA is helping make the Internet more secure, there are a few drawbacks that should be considered. For example, 2FA may discourage less technically savvy users, for whom downloading and navigating smartphone verification apps can be a challenge.</p>
+<p>Requiring 2FA for a service can also create some economic barriers to entry. Not all users have the modern smartphones required for many 2FA methods. Additionally, mobile data is very expensive in some parts of the world, so even those with smartphones may suffer economic consequences for downloading a 2FA verification app.</p>
+<p>2FA also imposes business costs for those managing the service. 2FA is much more difficult to implement than password-only authentication, and a business providing 2FA will either have to incur setup costs or pay a third-party service to provide the authentication at an ongoing cost. Smaller businesses may forgo the increased security of 2FA because they simply cannot afford to support it.</p>
+
+<p><strong>Source:</strong> <a href="https://www.cloudflare.com/learning/access-management/what-is-two-factor-authentication/">https://www.cloudflare.com/learning/access-management/what-is-two-factor-authentication/</a></p>
+
+<hr>
+
+<h1>Two-Factor Authentication</h1>
+<p>Two-factor authentication (2FA), sometimes referred to as two-step verification or dual-factor authentication, is a security process in which users provide two different authentication factors to verify themselves.</p>
+<p>2FA is implemented to better protect both a user's credentials and the resources the user can access. It's typically used as part of a broader effort to prevent data breaches and the potential loss of personal data.</p>
+<p>Two-factor authentication provides a higher level of security than authentication methods that depend on single-factor authentication. With SFA, the user provides only one authenticating factor, typically a password or passcode. Two-factor authentication methods rely on a user providing a password as the first factor and a second factor that's different from the initial factor, usually either a security token or a biometric factor such as a fingerprint or facial scan.</p>
+<p>Two-factor authentication adds an extra layer of security to the authentication process by making it harder for attackers to gain access to a person's devices or online accounts. Even if the victim's password is hacked, a password alone isn't enough to pass the authentication check.</p>
+<p>Two-factor authentication has long been a cybersecurity strategy to manage account security by controlling access to sensitive systems and data. Online service providers are increasingly using 2FA to protect users' credentials from being used by hackers who stole a password database or used phishing attacks to obtain user passwords.</p>
+
+<h2>What Are Authentication Factors?</h2>
+<p>There are several ways in which someone can be authenticated using more than one authentication method. Most authentication methods rely on knowledge factors, such as a traditional password. Two-factor authentication methods add either a possession factor or an inherence factor.</p>
+<p>Authentication factors, listed in approximate order of adoption for computing, include the following:</p>
+<ul>
+  <li><strong>Knowledge factor.</strong> A knowledge factor is something the user knows, such as a password or a personal identification number (PIN).</li>
+  <li><strong>Possession factor.</strong> A possession factor is something the user has, such as an ID card, a security token, a cellphone, a mobile device or a smartphone app, to approve authentication requests.</li>
+  <li><strong>Biometric factor.</strong> A biometric factor, also known as an inherence factor, is something inherent in the user's physical self. It might be a personal attribute mapped from physical characteristics, such as fingerprints authenticated through a fingerprint reader. Other commonly used inherence factors include facial and voice recognition or behavioral biometrics, such as keystroke dynamics, gait or speech patterns.</li>
+  <li><strong>Location factor.</strong> A location factor is usually the location from which an authentication attempt is being made. Authentication attempts can be limited to specific devices in a particular location or the geographic source of an authentication attempt can be tracked based on the Internet Protocol address or some other geolocation information, such as Global Positioning System (GPS) data, derived from the user's iPhone, Android phone or other mobile device.</li>
+  <li><strong>Time factor.</strong> A time factor restricts user authentication to a specific time window in which logging on is permitted and restricts access to the system outside of that window.</li>
+</ul>
+<p>Most two-factor authentication methods rely on knowledge, possession and biometric authentication factors. Systems requiring greater security use multifactor authentication (MFA), which relies on additional independent credentials for more secure authentication.</p>
+
+<h2>How Does Two-Factor Authentication Work?</h2>
+<p>Enabling two-factor authentication varies depending on the specific application or vendor. However, two-factor authentication processes involve the same general, multistep process:</p>
+<ol>
+  <li>The user is prompted to log in by the application or the website.</li>
+  <li>The user enters what they know, usually their username and password.</li>
+  <li>The site's server finds a match and recognizes the user.</li>
+  <li>For processes that don't require passwords, the website generates a unique security key for the user. The authentication tool processes the key and the site's server validates it.</li>
+  <li>The site prompts the user to initiate the second login step. Although this step can take several forms, the user must prove that they have something only they would have, such as a biometric feature, security token, credit card, ID card, smartphone or other mobile device. This is the inherence or possession factor.</li>
+  <li>The user might have to enter a one-time passcode that was generated during Step 4.</li>
+  <li>After providing both factors, the user is authenticated and granted access to the application or website.</li>
+</ol>
+<p>Two-factor authentication involves two of three potential authentication factors.</p>
+
+<h2>Elements of Two-Factor Authentication</h2>
+<p>Two-factor authentication is a form of MFA. Technically, it's in use any time two authentication factors are required to gain access to a system or service. However, using two factors from the same category doesn't constitute 2FA. For example, requiring a password and a shared secret is still considered SFA as they both belong to the knowledge authentication factor type.</p>
+<p>SFA that relies on usernames and passwords isn't the most secure. One problem with password-based authentication is it requires knowledge and diligence to create and remember strong passwords. Passwords require protection from insider threats, such as carelessly stored sticky notes with login credentials and carelessly discarded hard drives. Passwords are also prey to external threats, such as hackers using brute-force, dictionary or rainbow table attacks as well as social engineering exploits.</p>
+<p>Given enough time and resources, an attacker can usually breach password-based security systems and steal corporate data. Passwords have remained the most common form of SFA on laptops and other devices because of their low cost, ease of implementation and familiarity.</p>
+<p>Multiple challenge-response authentication questions can provide more security depending on how they are implemented. Standalone biometric verification methods can also provide a more secure method of SFA.</p>
+<p>Adaptive multifactor authentication introduces a gatekeeper element into the process. The authentication system has knowledge of specific characteristics or patterns associated with a specific user. The process of authenticating a user's identity starts when a user interacts with the adaptive authenticator app. The app analyzes the user's known characteristics and behavior – for example, how many prior access requests have been made or a time-based analysis of when the requests were made -- to determine if a match can be made. Once a match is confirmed, the user proceeds to the next step in authentication or access process.</p>
+
+<h2>Types of Two-Factor Authentication Products</h2>
+<p>There are many different devices and services for implementing 2FA, from tokens to radio frequency identification cards to smartphone apps.</p>
+<p>Two-factor authentication products make use of two basic features:</p>
+<ul>
+  <li>Tokens that are given to users to use when logging in.</li>
+  <li>Infrastructure or software that recognizes and authenticates access for users who are using their tokens correctly.</li>
+</ul>
+<p>Authentication tokens can be physical devices, such as key fobs or smart cards, or software, such as mobile or desktop apps that generate PIN codes for authentication. These authentication codes are known as one-time passwords (OTPs). The authentication code is a short sequence linked to a particular device, user or account and can be used only once as part of an authentication process. Servers generate OTPs, and authentication devices or apps are used to recognize them as authentic.</p>
+<p>Organizations need to deploy a system to accept, process, and allow or deny access to users authenticating with their tokens. These systems can be deployed in the form of server software or as a dedicated hardware server. Third-party vendors also provide authenticating services.</p>
+<p>An important aspect of 2FA is ensuring the authenticated user is given access to all resources they're approved for and only those resources. As a result, one key function of 2FA is linking the authentication system with an organization's authentication data.</p>
+<p>Microsoft, for instance, supports 2FA in Windows 10 using Windows Hello, a non-password option for Microsoft accounts. It also authenticates users through Microsoft Active Directory, Azure AD and the Fast IDentity Online 2 authentication protocol.</p>
+
+<h2>How 2FA Hardware Tokens Work</h2>
+<p>Hardware tokens for 2FA are available supporting different approaches to authentication. One popular hardware token is the Yubico's YubiKey, USB device that supports OTPs, public key encryption and authentication, and the Universal 2nd Factor protocol developed by the FIDO Alliance.</p>
+<p>When users with a YubiKey log in to an online service that supports OTPs, such as Gmail, GitHub or WordPress, they insert their YubiKey into the USB port of their device, enter their password, click on the YubiKey field and touch the YubiKey button. The YubiKey generates an OTP and enters it in the field.</p>
+<p>The OTP is a 44-character, single-use password. The first 12 characters are a unique ID that represents the security key registered with the account. The remaining 32 characters contain information that is encrypted using a key known only to the device and Yubico's servers, established during the initial account registration.</p>
+<p>The OTP is sent from the online service to Yubico for authentication. Once the OTP is validated, the Yubico authentication server sends back a message confirming that the token is valid for the user, and the 2FA process is complete. The user provided two factors of authentication: The password is the knowledge factor, and the YubiKey is the possession factor.</p>
+
+<h2>Two-Factor Authentication for Mobile Devices</h2>
+<p>A trusted mobile device is one that a specific user controls and regularly uses for transactions requiring secure access. The authentication system knows the device and, with that knowledge, uses it to bypass steps in the authentication process. For instance, a trusted phone number can be used to receive verification codes by text message or automated phone call. A user must verify at least one trusted phone number to enroll in mobile 2FA.</p>
+<p>Smartphones offer a variety of 2FA capabilities, enabling companies to use what works best for them. Some devices can recognize fingerprints, use the built-in camera for facial recognition or iris scanning, or use the microphone for voice recognition. Smartphones equipped with GPS can verify location as an additional factor. Voice or Short Message Service (SMS) can also be used as a channel for out-of-band authentication.</p>
+<p>Apple iOS, Google Android and Windows 10 all have apps that support 2FA, enabling the phone to serve as the physical device to satisfy the possession factor. Platforms such as Cisco Duo, Okta Multifactor, RSA Security SecurID and Yubikey let customers use their trusted devices for 2FA. They establish that a user is trusted before verifying that the mobile device can also be trusted as an authentication factor.</p>
+<p>Authenticator apps replace the need to obtain a verification code using text, voice call or email. For example, to access a website or web-based service that supports Google Authenticator, users type in their username and password as their knowledge factor. They are then prompted to enter a six-digit number. Instead of having to wait a few seconds to receive a text message, an authenticator generates the number for them. These numbers change every 30 seconds and are different for every login. By entering the correct number, users complete the verification process and prove possession of the correct device, which is their possession factor.</p>
+
+<h2>Authentication Standards</h2>
+<p>The following are open standard authentication protocols that form the basis for different authentication tools that support 2FA:</p>
+<ul>
+  <li><strong>FIDO.</strong> The FIDO Alliance developed this open standard, which uses public key cryptography. It's designed to eliminate the need for passwords, replacing them with phishing-resistant passkeys.</li>
+  <li><strong>OAuth 2.0.</strong> An abbreviation of open authorization, OAuth is an open standard that defines an authorization framework that protects system resources, such as files and applications. It provides authorization for application programming interfaces (APIs). It doesn't support mobile applications.</li>
+  <li><strong>OpenID Connect (OIDC).</strong> Developed by the OpenID Foundation, OIDC adds layers to the OAuth 2.0 protocol that support authentication and identity management. It also supports mobile applications, APIs and browser-based apps.</li>
+  <li><strong>Security Assertion Markup Language (SAML).</strong> Developed by the Organization for the Advancement of Structured Information Standards, SAML is an open standard for single sign-on access to browser-based applications such as web sites.</li>
+</ul>
+
+<h2>Push Notifications for 2FA</h2>
+<p>A push notification is passwordless authentication that verifies a user by sending a notification directly to a secure app on the user's device, alerting the user that an authentication attempt is happening. The user can view details of the authentication attempt and either approve or deny access, typically with a single tap. If the user approves the authentication request, the server receives that request and logs the user in to the web app.</p>
+<p>Push notifications authenticate the user by confirming that the device -- usually a mobile device -- registered with the authentication system is in the user's possession. If an attacker compromises the device, the push notifications are also compromised. Push notifications eliminate threats such as unauthorized access, social engineering and man-in-the-middle attacks.</p>
+<p>While push notifications are more secure than other forms of authentication, there are security risks. For example, users can accidentally approve a fraudulent authentication request because they are used to tapping approve when they receive push notifications.</p>
+
+<h2>Is Two-Factor Authentication Secure?</h2>
+<p>Two-factor authentication improves security, but these systems are only as secure as their weakest component. For example, hardware tokens depend on the security of the issuer or manufacturer. One of the most high-profile cases of a compromised two-factor system occurred in 2011 when security company RSA reported its SecurID authentication tokens had been hacked.</p>
+<p>The account recovery process in these systems can also be subverted when it's used to defeat two-factor authentication. Recovery processes often reset a user's current password and emails a temporary password to enable the user to log in again, bypassing the 2FA process. The business Gmail accounts of the chief executive of Cloudflare were hacked in this way.</p>
+<p>Although SMS-based 2FA is inexpensive, easy to implement and considered user-friendly, it's vulnerable to numerous attacks. The National Institute of Standards and Technology (NIST) has discouraged the use of SMS in 2FA services in its "Special Publication 800-63-3 (2023): Digital Identity Guidelines." NIST concluded that OTPs sent via SMS text are too vulnerable due to mobile phone number portability attacks, attacks against the mobile phone network and malware that can be used to intercept or redirect text messages.</p>
+
+<h2>Future of Authentication</h2>
+<p>Environments that require higher security are starting to use three-factor authentication. It typically involves possession of a physical token and a password used in conjunction with biometric data, such as fingerprint scans or voiceprints. Factors such as geolocation, type of device and time of day are also used to determine whether a user should be authenticated or blocked.</p>
+<p>Other authentication factors emerging include behavioral biometric identifiers, such as a user's keystroke length, typing speed and mouse movements. These are discreetly monitored in real time to provide continuous authentication instead of a single one-off authentication check during login.</p>
+<p>Relying on passwords as the main method of authentication is common. But it often no longer offers the security or user experience that companies and their users demand. Even though legacy security tools, such as a password manager and MFA, attempt to deal with the problems of usernames and passwords, they depend on an essentially outdated architecture: the password database.</p>
+<p>Consequently, many organizations are turning to passwordless authentication. Methods such as biometrics and secure protocols let users securely authenticate themselves in applications without having to enter passwords. For businesses, this means employees can access their work without passwords while IT still maintains control across every login. In addition, blockchain use has brought attention to decentralized identifiers and self-sovereign identity as alternatives to traditional authentication methods.</p>
+
+<p><strong>Source:</strong> <a href="https://www.techtarget.com/searchsecurity/definition/two-factor-authentication">https://www.techtarget.com/searchsecurity/definition/two-factor-authentication</a></p>
+
+    </body>
+</html>
