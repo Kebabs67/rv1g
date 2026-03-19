@@ -1,0 +1,448 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>2FA</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="css/mansStils.css" rel="stylesheet" type="text/css"/>
+    </head>
+<body>
+
+<!-- Navbar styles -->
+<style>
+  /* Allow dropdown to overflow the navbar bar */
+  #myNavbar { overflow: visible !important; }
+  .w3-top { overflow: visible !important; }
+
+  .nav-dropdown { position: relative; display: inline-block; vertical-align: top; }
+
+  .nav-dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    min-width: 220px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    z-index: 9999;
+  }
+  .nav-dropdown-content.open { display: block; }
+
+  .nav-dropdown-content a {
+    display: block;
+    padding: 10px 16px;
+    color: #000;
+    text-decoration: none;
+    font-size: 13px;
+    border-bottom: 1px solid #eee;
+    font-family: "Lato", sans-serif;
+  }
+  .nav-dropdown-content a:hover { background-color: #f1f1f1; }
+
+  .nav-dropdown-section-title {
+    padding: 8px 16px 4px;
+    font-size: 11px;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    background: #f9f9f9;
+    border-bottom: 1px solid #eee;
+    font-family: "Lato", sans-serif;
+  }
+
+  .nav-dropdown-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+    line-height: 1.8;
+    color: inherit;
+    background: none;
+    border: none;
+  }
+  .nav-dropdown-btn:hover { background-color: rgba(0,0,0,0.1); }
+</style>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+
+    <!-- Dropdown: DĀVIS JERONOVIČS → index sections (desktop) -->
+    <div class="nav-dropdown w3-hide-small">
+      <button class="nav-dropdown-btn" onclick="toggleDropdown(event)">DĀVIS JERONOVIČS &#9660;</button>
+      <div class="nav-dropdown-content" id="portfolioDropdown">
+        <div class="nav-dropdown-section-title">Portfolio</div>
+        <a href="index.html"><i class="fa fa-home" style="margin-right:8px"></i>DĀVIS JERONOVIČS</a>
+        <a href="index.html#about"><i class="fa fa-user" style="margin-right:8px"></i>Par Mani</a>
+        <a href="index.html#rastragrafika"><i class="fa fa-picture-o" style="margin-right:8px"></i>Rastragrafika</a>
+        <a href="index.html#vektorgrafika"><i class="fa fa-pencil" style="margin-right:8px"></i>Vektorgrafika</a>
+        <a href="index.html#izklajlapas"><i class="fa fa-table" style="margin-right:8px"></i>Izklājlapas</a>
+        <a href="index.html#video"><i class="fa fa-film" style="margin-right:8px"></i>Video</a>
+        <a href="index.html#tekstapstrade"><i class="fa fa-file-text-o" style="margin-right:8px"></i>Tekstapstrāde</a>
+        <a href="index.html#3d"><i class="fa fa-cube" style="margin-right:8px"></i>3D Modelēšana</a>
+        <a href="index.html#saites"><i class="fa fa-th" style="margin-right:8px"></i>Uzdevumi</a>
+      </div>
+    </div>
+
+    <!-- Plain link on mobile -->
+    <a href="index.html" class="w3-bar-item w3-button w3-hide-medium w3-hide-large">DĀVIS JERONOVIČS</a>
+
+    <!-- 2FA page section links (desktop) -->
+    <a href="#defined" class="w3-bar-item w3-button w3-hide-small">2FA DEFINED</a>
+    <a href="#simplified" class="w3-bar-item w3-button w3-hide-small">SIMPLIFIED GUIDE</a>
+    <a href="#whatIs" class="w3-bar-item w3-button w3-hide-small">WHAT IS 2FA?</a>
+    <a href="#techTarget" class="w3-bar-item w3-button w3-hide-small">TWO-FACTOR AUTHENTIFICATION</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <a href="index.html" class="w3-bar-item w3-button" onclick="toggleFunction()">&#8592; Portfolio Home</a>
+    <a href="index.html#about" class="w3-bar-item w3-button" onclick="toggleFunction()">Par Mani</a>
+    <a href="index.html#rastragrafika" class="w3-bar-item w3-button" onclick="toggleFunction()">Rastragrafika</a>
+    <a href="index.html#vektorgrafika" class="w3-bar-item w3-button" onclick="toggleFunction()">Vektorgrafika</a>
+    <a href="index.html#izklajlapas" class="w3-bar-item w3-button" onclick="toggleFunction()">Izklājlapas</a>
+    <a href="index.html#video" class="w3-bar-item w3-button" onclick="toggleFunction()">Video</a>
+    <a href="index.html#tekstapstrade" class="w3-bar-item w3-button" onclick="toggleFunction()">Tekstapstrāde</a>
+    <a href="index.html#3d" class="w3-bar-item w3-button" onclick="toggleFunction()">3D</a>
+    <a href="index.html#saites" class="w3-bar-item w3-button" onclick="toggleFunction()">Uzdevumi</a>
+    <a href="#defined" class="w3-bar-item w3-button" onclick="toggleFunction()">2FA Defined</a>
+    <a href="#simplified" class="w3-bar-item w3-button" onclick="toggleFunction()">Simplified Guide</a>
+    <a href="#whatIs" class="w3-bar-item w3-button" onclick="toggleFunction()">What is 2FA?</a>
+    <a href="#techTarget" class="w3-bar-item w3-button" onclick="toggleFunction()">Two-Factor Auth</a>
+  </div>
+</div>
+
+<!-- Hero / Title -->
+<div class="w3-content w3-container w3-padding-64" style="margin-top:43px;">
+  <h1 class="w3-wide w3-center">2FA</h1>
+  <h2 class="w3-center">Table of Contents</h2>
+  <ul>
+    <li>2FA defined</li>
+    <li>Benefits of 2FA</li>
+    <li>Some other advantages of 2FA include</li>
+    <li>Authentication methods for 2FA</li>
+    <li>2FA implementation</li>
+    <li>2FA vs. MFA</li>
+    <li>SOURCE</li>
+    <li>2FA: A simplified guide to two-factor authentication</li>
+    <li>What is 2FA?</li>
+    <li>2FA vs. multi-factor authentication (MFA)</li>
+    <li>How does 2FA work?</li>
+    <li>Why is two-factor authentication important?</li>
+    <li>Types of 2FA security</li>
+    <li>How to get 2FA on your accounts</li>
+    <li>3 benefits of 2FA</li>
+    <li>Safeguard your information and identity</li>
+    <li>FAQs about 2FA</li>
+    <li>What is two-factor authentication?</li>
+    <li>Two-Factor Authentication</li>
+    <li>What is an authentication factor?</li>
+    <li>How does two-factor authentication work?</li>
+    <li>Why use two-factor authentication?</li>
+    <li>Is SMS-based two-factor authentication secure?</li>
+    <li>Are there drawbacks to two-factor authentication?</li>
+    <li>Two-factor authentication (TechTarget)</li>
+    <li>What are authentication factors?</li>
+    <li>How does two-factor authentication work?</li>
+    <li>Elements of two-factor authentication</li>
+    <li>Types of two-factor authentication products</li>
+    <li>How 2FA hardware tokens work</li>
+    <li>Two-factor authentication for mobile devices</li>
+    <li>Authentication standards</li>
+    <li>Push notifications for 2FA</li>
+    <li>Is two-factor authentication secure?</li>
+    <li>Future of authentication</li>
+  </ul>
+</div>
+
+<!-- Parallax divider -->
+<div class="bgimg-2 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-white w3-wide">2FA DEFINED</span>
+  </div>
+</div>
+
+<!-- Section 1: Microsoft source -->
+<div class="w3-content w3-container w3-padding-64" id="defined">
+  <h2 class="w3-center">2FA Defined</h2>
+  <p>Two-factor authentication (2FA) is an identity and access management security method that requires two forms of identification to access resources and data. 2FA gives businesses the ability to monitor and help safeguard their most vulnerable information and networks.</p>
+
+  <h2 class="w3-center">Benefits of 2FA</h2>
+  <p>Businesses use 2FA to help protect their employees' personal and business assets. This is important because it prevents cybercriminals from stealing, destroying, or accessing your internal data records for their own use.</p>
+  <p>The advantages of 2FA are endless. For example, with 2FA, there's no need for users to carry or download a token generator, or an app associated with one. Most websites use your mobile device to text, call, or use a personalized 2FA for their business to verify your identity.</p>
+
+  <h3>Some Other Advantages of 2FA Include:</h3>
+  <ul>
+    <li>There's no need to use a hardware token generator. These types of 2FA methods are often lost or misplaced. However, with advanced technology, 2FA methods are more convenient than ever.</li>
+    <li>Passcode generators are more efficient than traditional passwords. Generators are the safer option because no two passcodes are the same.</li>
+    <li>Max passcode entry prevents cybercriminals from hacking and accessing sensitive data.</li>
+    <li>The process is manageable and user-friendly.</li>
+  </ul>
+
+  <h2 class="w3-center">Authentication Methods for 2FA</h2>
+  <p>There are different authentication methods when using two-factor authentication. Here's a list of some of the most popular options.</p>
+  <ul>
+    <li><strong>Hardware tokens</strong> — Businesses can give their employees hardware tokens in the form of a key fob that produces codes every few seconds to a minute. This is one of the oldest forms of two-factor authentication.</li>
+    <li><strong>Push notifications</strong> — Push two-factor authentication methods require no password. This type of 2FA sends a signal to your phone to either approve/deny or accept/decline access to a website or app to verify your identity.</li>
+    <li><strong>SMS verification</strong> — SMS, or text messaging, can be used as a form of two-factor authentication when a message is sent to a trusted phone number. The user is prompted to either interact with the text or use a one-time code to verify their identity on a site or app.</li>
+    <li><strong>Voice-based authentication</strong> — Voice authentication works in a similar way to push notifications, except that your identity is confirmed through automation. The voice will ask you to press a key or state your name to identify yourself.</li>
+  </ul>
+
+  <h2 class="w3-center">2FA Implementation</h2>
+  <p>Implementing 2FA within a business or personal setting is beneficial in protecting vulnerable networks and databases.</p>
+  <p>With a mobile device, you can generate your own codes, or tokens, to provide a unique set of letters/numbers to verify your identity. These codes are sent via SMS and are verified through a website or app. It is important to note that the website or app that you're identifying yourself through is reliable and safe.</p>
+  <p>One-time passcodes that are generated through apps or websites are more time-sensitive than an SMS code or token.</p>
+  <p>Here are some tips to ensure your two-factor authentication implementation goes as smoothly as possible.</p>
+  <ul>
+    <li>Consider using the most common method of implementation, SMS authentication. It's convenient and ensures that all user identities are verified via a reliable phone number.</li>
+    <li>Remember that most users can implement 2FA through the security settings of their smartphone or electronic device.</li>
+    <li>Find the right two-factor authentication provider. Each company that hosts authentication services has their own process of implementation. For example, the Authenticator app allows you to register one or more of your business/personal devices to ensure that all are protected.</li>
+  </ul>
+  <p>Businesses and individuals can implement these two forms of 2FA through Microsoft's Authenticator app. This service provides authenticator options, both two-factor and multi-factor, depending on your unique individual or business needs.</p>
+
+  <h2 class="w3-center">2FA vs. MFA</h2>
+  <p>The difference between two-factor authentication, 2FA, and multi-factor authentication, MFA, is that 2FA involves two sets of steps to identify a user. In addition, 2FA utilizes one-time passcodes that are time-sensitive to prevent identity theft. On the other hand, MFA involves two or more steps or processes to identify a user.</p>
+  <p>Usually, businesses with high-level security (i.e., healthcare facilities, government agencies, or financial services) opt for multi-factor authentication versus two-factor authentication. Two-factor authentication helps add a layer of security to all your online personal and business accounts.</p>
+
+  <p class="w3-center"><strong>Source:</strong> <a class="w3-hover-opacity" href="https://www.microsoft.com/en-us/security/business/security-101/what-is-two-factor-authentication-2fa">microsoft.com</a></p>
+</div>
+
+<!-- Parallax divider -->
+<div class="bgimg-3 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-white w3-wide">A SIMPLIFIED GUIDE</span>
+  </div>
+</div>
+
+<!-- Section 2: Norton source -->
+<div class="w3-content w3-container w3-padding-64" id="simplified">
+  <h1 class="w3-wide w3-center">2FA: A Simplified Guide to Two-Factor Authentication</h1>
+  <p>Enable two-factor authentication (2FA) for an added level of security against hackers and identity thieves. Learn what 2FA is and how it helps secure your data. Then get Norton™ 360 with LifeLock™ Select to help secure your personal information and protect against identity theft.</p>
+  <p>It's no secret that cybercriminals are hungry for passwords and other user data.</p>
+  <p>An unprotected password can help cybercriminals access your bank account, credit cards, or personal websites. From there, they can:</p>
+  <ol>
+    <li>Sell your personal information.</li>
+    <li>Access your money.</li>
+    <li>Compromise your overall digital security.</li>
+  </ol>
+  <p>But the battle isn't lost. One way to quickly boost the safety of your online accounts is to enable two-factor authentication. From safeguarding mobile banking details to shielding your medical history, 2FA verification should be a pillar of your internet safety practices.</p>
+
+  <h2 class="w3-center">What is 2FA?</h2>
+  <p>2FA, or two factor authentication, is when a site or app requires you to enter an extra form of identification to verify your identity and log into your account. 2FA requires people to verify their identity based on two of the three factors that can confirm identity:</p>
+  <ol>
+    <li>Something you know (e.g., a password)</li>
+    <li>Something you have (e.g., a phone)</li>
+    <li>Something you are (e.g., a fingerprint or facial scan)</li>
+  </ol>
+  <p>That extra ID can be a code generated and sent directly through a text message or authenticator app. It can also be in the form of a piece of hardware like a USB drive or a biometric ID like a fingerprint.</p>
+
+  <h2 class="w3-center">2FA vs. Multi-Factor Authentication (MFA)</h2>
+  <p>MFA refers to any type of authentication that requires two or more factors. That means that while 2FA is a form of MFA, not all forms of MFA have only two factors. Increasing the level of security by adding an extra factor makes it much more difficult for hackers to gain entry into a system.</p>
+
+  <h2 class="w3-center">How Does 2FA Work?</h2>
+  <p>As the name suggests, two-factor authentication requires one extra step—a second factor—to log into an account. The process works as follows:</p>
+  <ol>
+    <li>The user enters their username and password.</li>
+    <li>The account, platform, or site prompts users to input another verification form, such as a one-time password or code sent to their mobile phone.</li>
+    <li>The user enters the verification code to access their account.</li>
+  </ol>
+  <p>An ATM card is a good example of two-factor authentication in the real world. In addition to physically presenting the card (something you have), you must also type in your PIN (something you know) to verify your identity and access your account.</p>
+
+  <h2 class="w3-center">Why is Two-Factor Authentication Important?</h2>
+  <p>Two-factor authentication is important because adding an extra layer of verification before you can access your account means thieves will struggle to get your personal information. As cybercriminals continue to use brute force or password spraying attacks, even if you're following good password security practices you need 2FA as well.</p>
+  <ol>
+    <li>Cybercriminals who want to steal your personal information</li>
+    <li>Hackers trying to access your bank accounts</li>
+    <li>Thieves breaking into your online credit card portals</li>
+  </ol>
+
+  <h2 class="w3-center">Types of 2FA Security</h2>
+  <ol>
+    <li><strong>Something you know:</strong> These kinds of 2FA use a code, question, or password that are unique to you.</li>
+    <li><strong>Something you have:</strong> This type of 2FA requires users to possess a type of physical token or device, such as a phone or USB token.</li>
+    <li><strong>Something you are:</strong> This type of 2FA requires biometrics like fingerprint or facial recognition or a physical location (confirmed by GPS) to confirm your identity.</li>
+  </ol>
+
+  <h2 class="w3-center">How to Get 2FA on Your Accounts</h2>
+  <p>Though not all sites use 2FA, some give you the option to activate it for your account. For sites that allow you to enable 2FA, you can turn it on in your account security or privacy settings.</p>
+  <p>Some popular websites that do enable 2FA include: Amazon, Facebook and Instagram, Dropbox, LastPass, LinkedIn, Intuit, TurboTax, Mint, PayPal, and Yahoo.</p>
+  <p><strong>Tip:</strong> If you're using your phone as your 2FA method, make sure it's also password-protected. Otherwise, if your phone is lost or stolen, scammers could access your accounts.</p>
+
+  <h2 class="w3-center">3 Benefits of 2FA</h2>
+  <ol>
+    <li><strong>Account monitoring:</strong> You'll know if someone is trying to access your accounts because you'll receive a message or prompt on your device.</li>
+    <li><strong>Dynamic process:</strong> 2FA authenticator apps, push notifications, and texts are generated and sent when you log in.</li>
+    <li><strong>Account recovery assistance:</strong> 2FA means that you don't have to put in a help desk ticket or try to get on the phone with a support team member to reset your logins.</li>
+  </ol>
+
+  <h2 class="w3-center">Safeguard Your Information and Identity</h2>
+  <p>Now that you know how 2FA can improve the Cyber Safety of your online accounts and your personal data, enable it wherever you can.</p>
+
+  <h2 class="w3-center">FAQs About 2FA</h2>
+  <h3>Is 2FA safe?</h3>
+  <p>For the most part, 2FA is safe. Still, like most online activities, there are ways that criminals can bypass 2FA security and access your account.</p>
+  <h3>Can two-step verification be hacked?</h3>
+  <p>Yes, hackers can use certain phishing messages to work around 2FA login processes. That being said, having a second authentication factor makes it more difficult for hackers.</p>
+  <h3>What is the strongest 2FA method?</h3>
+  <p>Hardware-based 2FA is the strongest form of 2FA verification. Because a physical item is needed, it's much more difficult for a hacker or criminal to access all parts of 2FA logins.</p>
+  <h3>Is MFA better than 2FA?</h3>
+  <p>Multi-factor authentication that uses three or more authentication factors is more secure than 2FA. For most sites, apps, and platforms, 2FA should be secure enough.</p>
+  <h3>How do I know if I have two-factor authentication?</h3>
+  <p>You can check if your account or device has 2FA by entering your account security or privacy settings.</p>
+
+  <p class="w3-center"><strong>Source:</strong> <a class="w3-hover-opacity" href="https://us.norton.com/blog/privacy/what-is-2fa">norton.com</a></p>
+</div>
+
+<!-- Parallax divider -->
+<div class="bgimg-2 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-white w3-wide">WHAT IS 2FA?</span>
+  </div>
+</div>
+
+<!-- Section 3: Cloudflare source -->
+<div class="w3-content w3-container w3-padding-64" id="whatIs">
+  <h1 class="w3-wide w3-center">What is Two-Factor Authentication?</h1>
+  <p>Two-factor authentication, abbreviated as 2FA, is an authentication process that requires two different authentication factors to establish identity. In a nutshell, it means requiring a user to prove their identity in two different ways before granting them access. 2FA is one form of multi-factor authentication.</p>
+
+  <h2 class="w3-center">What is authentication?</h2>
+  <p>Authentication is an important component of access control. It is the security practice of confirming that someone is who they claim to be. A traveler showing their passport to a customs agent is one example.</p>
+  <p>In the scope of cybersecurity, the most common example of authentication is logging into a service on the web, such as signing into Gmail in a web browser or logging in on the Facebook app.</p>
+
+  <h2 class="w3-center">What is an Authentication Factor?</h2>
+  <p>Authentication factors are different classes of identity verification methods. Some commonly used authentication factors for 2FA include:</p>
+  <ol>
+    <li><strong>Knowledge:</strong> A piece of information that only the user should know, such as a password or the answer to a security question.</li>
+    <li><strong>Possession:</strong> Relies on the user maintaining physical possession of an object, such as a hardware key or a mobile device.</li>
+    <li><strong>Biometric Data:</strong> Unique biological traits such as fingerprints, retinal scans, and face ID.</li>
+    <li><strong>Location:</strong> Location-based tools like GPS can be used to restrict authentication to users within a specified geographic region.</li>
+  </ol>
+
+  <h2 class="w3-center">How Does Two-Factor Authentication Work?</h2>
+  <p>One of the most common examples of 2FA requires a username/password verification and an SMS text verification. The user logs in with credentials (knowledge factor), then enters a code sent to their mobile device (possession factor), completing the 2FA requirements.</p>
+
+  <h2 class="w3-center">Why Use Two-Factor Authentication?</h2>
+  <p>Password-based security has become too easy to exploit by attackers. With the prevalence of phishing scams, on-path attacks, brute force attacks, and password re-use, it has become increasingly simple for attackers to collect stolen login credentials. Security experts generally recommend that users enable 2FA whenever possible.</p>
+
+  <h2 class="w3-center">Is SMS-Based Two-Factor Authentication Secure?</h2>
+  <p>SMS-based 2FA is much more secure than single-factor authentication, but SMS is among the least secure 2FA methods. The SMS protocol is not very secure and messages can be intercepted by attackers. Google and many other major Internet services use time-based one-time passwords (TOTP) instead, which expire in under a minute.</p>
+
+  <h2 class="w3-center">Are There Drawbacks to Two-Factor Authentication?</h2>
+  <p>While 2FA is helping make the Internet more secure, there are a few drawbacks: it may discourage less technically savvy users, it requires modern smartphones, and it imposes business costs for implementation. Smaller businesses may forgo 2FA because they simply cannot afford to support it.</p>
+
+  <p class="w3-center"><strong>Source:</strong> <a class="w3-hover-opacity" href="https://www.cloudflare.com/learning/access-management/what-is-two-factor-authentication/">cloudflare.com</a></p>
+</div>
+
+<!-- Parallax divider -->
+<div class="bgimg-3 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-white w3-wide">TWO-FACTOR AUTHENTICATION</span>
+  </div>
+</div>
+
+<!-- Section 4: TechTarget source -->
+<div class="w3-content w3-container w3-padding-64" id="techTarget">
+  <h1 class="w3-wide w3-center">Two-Factor Authentication</h1>
+  <p>Two-factor authentication (2FA), sometimes referred to as two-step verification or dual-factor authentication, is a security process in which users provide two different authentication factors to verify themselves.</p>
+  <p>2FA is implemented to better protect both a user's credentials and the resources the user can access. It's typically used as part of a broader effort to prevent data breaches and the potential loss of personal data.</p>
+
+  <h2 class="w3-center">What Are Authentication Factors?</h2>
+  <ul>
+    <li><strong>Knowledge factor.</strong> Something the user knows, such as a password or PIN.</li>
+    <li><strong>Possession factor.</strong> Something the user has, such as an ID card, security token, or smartphone app.</li>
+    <li><strong>Biometric factor.</strong> Something inherent in the user's physical self — fingerprints, facial recognition, voice recognition, or behavioral biometrics.</li>
+    <li><strong>Location factor.</strong> The location from which an authentication attempt is being made, tracked via IP address or GPS.</li>
+    <li><strong>Time factor.</strong> Restricts user authentication to a specific time window.</li>
+  </ul>
+
+  <h2 class="w3-center">How Does Two-Factor Authentication Work?</h2>
+  <ol>
+    <li>The user is prompted to log in by the application or website.</li>
+    <li>The user enters their username and password.</li>
+    <li>The site's server finds a match and recognizes the user.</li>
+    <li>The site prompts the user to initiate the second login step.</li>
+    <li>The user proves possession of a second factor (biometric, token, device, etc.).</li>
+    <li>The user might have to enter a one-time passcode.</li>
+    <li>After providing both factors, the user is authenticated and granted access.</li>
+  </ol>
+
+  <h2 class="w3-center">Elements of Two-Factor Authentication</h2>
+  <p>Two-factor authentication is a form of MFA. Technically, it's in use any time two authentication factors are required to gain access to a system or service. Using two factors from the same category doesn't constitute 2FA — for example, requiring both a password and a security question is still single-factor authentication, as both are knowledge factors.</p>
+
+  <h2 class="w3-center">Types of Two-Factor Authentication Products</h2>
+  <p>There are many different devices and services for implementing 2FA, from tokens to RFID cards to smartphone apps. Authentication tokens can be physical devices such as key fobs or smart cards, or software apps that generate one-time passwords (OTPs).</p>
+
+  <h2 class="w3-center">How 2FA Hardware Tokens Work</h2>
+  <p>One popular hardware token is Yubico's YubiKey — a USB device that supports OTPs, public key encryption, and the Universal 2nd Factor protocol. When users log in, they insert the YubiKey, enter their password, and touch the button. The YubiKey generates a 44-character single-use OTP that is validated by Yubico's servers.</p>
+
+  <h2 class="w3-center">Two-Factor Authentication for Mobile Devices</h2>
+  <p>Smartphones offer a variety of 2FA capabilities — fingerprint recognition, facial recognition, iris scanning, voice recognition, and GPS location. Authenticator apps replace the need for SMS codes by generating a six-digit number that changes every 30 seconds.</p>
+
+  <h2 class="w3-center">Authentication Standards</h2>
+  <ul>
+    <li><strong>FIDO.</strong> Uses public key cryptography to eliminate passwords, replacing them with phishing-resistant passkeys.</li>
+    <li><strong>OAuth 2.0.</strong> An open standard for authorization that protects system resources and APIs.</li>
+    <li><strong>OpenID Connect (OIDC).</strong> Adds authentication and identity management layers on top of OAuth 2.0.</li>
+    <li><strong>SAML.</strong> An open standard for single sign-on access to browser-based applications.</li>
+  </ul>
+
+  <h2 class="w3-center">Push Notifications for 2FA</h2>
+  <p>A push notification is passwordless authentication that verifies a user by sending a notification directly to a secure app on the user's device. The user can approve or deny access with a single tap. Push notifications eliminate threats such as unauthorized access, social engineering and man-in-the-middle attacks.</p>
+
+  <h2 class="w3-center">Is Two-Factor Authentication Secure?</h2>
+  <p>Two-factor authentication improves security, but these systems are only as secure as their weakest component. The National Institute of Standards and Technology (NIST) has discouraged the use of SMS in 2FA services, concluding that OTPs sent via SMS are too vulnerable due to mobile phone number portability attacks and malware that can intercept text messages.</p>
+
+  <h2 class="w3-center">Future of Authentication</h2>
+  <p>Environments that require higher security are starting to use three-factor authentication, typically combining a physical token, a password, and biometric data. Behavioral biometric identifiers such as keystroke length, typing speed, and mouse movements are also emerging as continuous authentication methods. Many organizations are now turning to passwordless authentication using biometrics and secure protocols, while blockchain use has brought attention to decentralized identifiers as alternatives to traditional authentication methods.</p>
+
+  <p class="w3-center"><strong>Source:</strong> <a class="w3-hover-opacity" href="https://www.techtarget.com/searchsecurity/definition/two-factor-authentication">techtarget.com</a></p>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+  <a href="index.html" class="w3-button w3-light-grey"><i class="fa fa-arrow-left w3-margin-right"></i>Back to Portfolio</a>
+</footer>
+
+<script>
+// Toggle portfolio dropdown
+function toggleDropdown(e) {
+    e.stopPropagation();
+    var dd = document.getElementById("portfolioDropdown");
+    dd.classList.toggle("open");
+}
+// Close dropdown when clicking outside
+document.addEventListener("click", function() {
+    var dd = document.getElementById("portfolioDropdown");
+    if (dd) dd.classList.remove("open");
+});
+
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+    }
+}
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+</body>
+</html>
